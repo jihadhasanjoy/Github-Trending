@@ -1,0 +1,16 @@
+<div class="header">
+  <a href="javascript:;" class="logo" [routerLink]="['/home']">Github Trending</a>
+  <div class="header-center">
+
+    <div class="dropdown">
+      <button class="dropbtn">Services
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="javascript:;" [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
+        <a href="javascript:;" [routerLink]="['/top-country-user']" [routerLinkActive]="['active']">Top user by country</a>
+        <a href="javascript:;" [routerLink]="['/top-repository-user']" [routerLinkActive]="['active']">Top repositories</a>
+      </div>
+    </div>
+  </div>
+</div>

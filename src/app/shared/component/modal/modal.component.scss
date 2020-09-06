@@ -1,0 +1,88 @@
+/* MODAL STYLES
+-------------------------------*/
+app-modal {
+  /* modals are hidden by default */
+  display: none;
+  // width: 120vh;
+  .modal {
+      /* modal container fixed across whole screen */
+      position: fixed;
+      top: 30%;
+      right: 0;
+      bottom: 0;
+      left: 30%;
+      width: 40%;
+
+      /* z-index must be higher than .jw-modal-background */
+      z-index: 1000;
+
+      /* enables scrolling for tall modals */
+      overflow: auto;
+
+      .modal-body {
+          padding: 20px;
+          background: #fff;
+
+          /* margin exposes part of the modal background */
+          margin: 40px;
+      }
+  }
+
+  .modal-background {
+      /* modal background fixed across whole screen */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      /* semi-transparent black  */
+      background-color: #000;
+      opacity: 0.75;
+
+      /* z-index must be below .jw-modal and above everything else  */
+      z-index: 900;
+  }
+}
+
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
+}
+
+
+.list-iteams {
+  display: flex;
+  position: relative;
+
+  cursor: pointer;
+  .list-iteams-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+  }
+  .list-iteams-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    img{
+      background-image: url("./../../../../assets/50x50.png");
+      width: 50px;
+      height: auto;
+    }
+  }
+  .cancel-icon{
+    position: absolute;
+    right: -2px;
+    top: -16px;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .modal{
+    left: 0% !important;
+    width: 100% !important;
+  }
+}

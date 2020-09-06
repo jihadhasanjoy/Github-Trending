@@ -1,0 +1,26 @@
+.top-user {
+  min-height: 80%;
+  padding: 0px 10px;
+}
+
+.pagination-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  li{
+    // padding: 9px;
+    margin-right: 20px;
+    list-style-type: none;
+    background: #f1f1f1;
+    cursor: pointer;
+  }
+}
+
+.active {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  padding: 9px;
+  background-color: #337ab7 !important;
+  border-color: #337ab7 !important;
+}

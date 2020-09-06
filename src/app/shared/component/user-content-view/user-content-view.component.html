@@ -1,0 +1,31 @@
+
+<div class="user-content-list">
+  <div class="user-content" *ngFor="let user of userContentData">
+      <div class="list-content"  (click)="openModal('custom-modal-1', user)">
+          <div class="left-content">
+            <span> <b>Name: {{user.login}}</b></span>
+            <span> Id: {{user.login}}</span>
+            <span> Type: {{user.type}}</span>
+          </div>
+          <div class="right-content">
+            <img [src]="user.avatar_url" alt="">
+          </div>
+      </div>
+  </div>
+
+  <app-modal id="custom-modal-1">
+
+    <div class="list-iteams" *ngIf="selectItem">
+      <div class="list-iteams-left">
+        <span> <b>Name: {{selectItem.login}}</b></span>
+        <span> Node Id: {{selectItem.node_id}}</span>
+        <span> Id: {{selectItem.id}}</span>
+        <span> Type: {{selectItem.type}}</span>
+      </div>
+      <div class="list-iteams-right">
+        <img [src]="selectItem.avatar_url" alt="">
+      </div>
+      <i class="fa fa-times cancel-icon" aria-hidden="true" (click)="closeModal('custom-modal-1');"></i>
+    </div>
+  </app-modal>
+</div>

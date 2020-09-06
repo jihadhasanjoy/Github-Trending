@@ -1,0 +1,32 @@
+<div class="rep-content-list">
+  <div class="rep-content" *ngFor="let rep of repositoryContentData">
+    <div class="list-content" (click)="openModal('custom-modal-1', rep)">
+
+      <div class="left-content">
+        <span> <b>Name: {{rep.name}}</b></span>
+        <span> Id: {{rep.id}}</span>
+        <span> Created Date: {{rep.created_at | date}}</span>
+      </div>
+      <div class="right-content">
+        <img [src]="rep.owner.avatar_url" alt="">
+      </div>
+    </div>
+
+  </div>
+
+
+  <app-modal id="custom-modal-1">
+
+    <div class="list-iteams" *ngIf="selectItem">
+      <div class="list-iteams-left">
+        <span> <b>Full Name: {{selectItem.full_name}}</b></span>
+        <span> Watchers: {{selectItem.watchers}}</span>
+        <span> Created Date: {{selectItem.created_at | date}}</span>
+      </div>
+      <div class="list-iteams-right">
+        <img [src]="selectItem.owner.avatar_url" alt="">
+      </div>
+      <i class="fa fa-times cancel-icon" aria-hidden="true" (click)="closeModal('custom-modal-1');"></i>
+    </div>
+  </app-modal>
+</div>

@@ -1,0 +1,26 @@
+
+<div class="top-user">
+    <app-repository-content-view *ngIf="pagedItems && !isLoading" [repositoryContentData]= "pagedItems"></app-repository-content-view>
+
+    <!-- loading  -->
+    <div *ngIf="isLoading" class="loading"> Loading..</div>
+
+    <!-- pager -->
+    <ul *ngIf="pager && pager.pages && pager.pages.length" class="pagination-list">
+      <li *ngIf="pager.currentPage !== 1">
+          <a (click)="setPage(1)">First</a>
+      </li>
+      <li *ngIf="pager.currentPage !== 1">
+          <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li *ngIf="pager.currentPage !== pager.totalPages" >
+          <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li *ngIf="pager.currentPage !== pager.totalPages">
+          <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+  </ul>
+</div>

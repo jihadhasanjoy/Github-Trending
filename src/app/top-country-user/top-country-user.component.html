@@ -1,0 +1,14 @@
+<div class="top-country"  >
+  <div class="select-box">
+    <select id="select" (change)="onSubmit()" [formControl]="name">
+      <ng-container *ngFor="let item of selectList" >
+        <option [value]="item" > {{item}}</option>
+      </ng-container>
+
+    </select>
+  </div>
+
+  <div *ngIf="isLoading" class="loading"> Loading..</div>
+  <app-user-content-view *ngIf="user && user.items.length > 0 && !isLoading" [userContentData]= "user.items"></app-user-content-view>
+  <div *ngIf="user && user.items.length == 0 && !isLoading" class="empty-listy"> Item List Empty</div>
+</div>

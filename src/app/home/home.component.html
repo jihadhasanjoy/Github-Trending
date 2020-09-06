@@ -1,0 +1,32 @@
+<div class="content home">
+
+  <div class="search">
+    <input type="text" placeholder="Search.." name="search2" [formControl]="name">
+    <button type="submit" [disabled]="isDisabled" (click)="searchByName()">Search</button>
+  </div>
+
+  <div class="content" *ngIf="isDispalyData">
+    <div class="tabs">
+
+      <div class="tabs-button">
+        <button (click)="showByName()" [ngStyle]="{'background-color': isShowByName ? '#ddd' : '' }">Names</button>
+        <button (click)="showByRepositories()" [ngStyle]="{'background-color': isShowByName ? '' : '#ddd' }">Repositories</button>
+      </div>
+
+      <!-- {isShowByName ? } -->
+      <div *ngIf="isShowByName; else repositories">
+       <app-user-content-view *ngIf="userContentData" [userContentData]= "userContentData.items"></app-user-content-view>
+       <div *ngIf="userContentData && userContentData.items.length == 0" class="empty-listy"> User List Empty</div>
+      </div>
+
+      <ng-template #repositories>
+       <app-repository-content-view *ngIf="repositoryContentData" [repositoryContentData]= "repositoryContentData.items"></app-repository-content-view>
+       <div *ngIf="repositoryContentData && repositoryContentData.items.length == 0" class="empty-listy"> Repository List Empty</div>
+      </ng-template>
+
+
+    </div>
+  </div>
+
+
+</div>
