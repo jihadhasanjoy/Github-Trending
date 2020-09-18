@@ -9,6 +9,7 @@ export class PagerService {
 
   getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10): IPager {
     // calculate total pages
+    debugger;
     const totalPages = Math.ceil(totalItems / pageSize);
 
     let startPage: number;

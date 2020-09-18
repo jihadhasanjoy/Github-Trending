@@ -44,8 +44,12 @@ export class TopRepositoryUserComponent implements OnInit, OnDestroy {
   setPage(page: number): void {
 
     // get pager object from service
+    debugger;
     this.pager = this.pagerService.getPager(this.topRepositoriesItem.length, page);
 
+    // this.pager = this.pagerService.getPager(500, page);
+
+    debugger;
     // get current page of items
     this.pagedItems = this.topRepositoriesItem.slice(this.pager.startIndex, this.pager.endIndex + 1);
 }

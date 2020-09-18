@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { IOwner } from '../../models/userContent.model';
 import { ModalService } from '../../services/modal.service';
+import { debounce } from 'rxjs/operators';
 // import { IOwner } from '../shared/models/userContent.model';
 // import { ModalService } from '../shared/services/modal.service';
 
@@ -19,11 +20,13 @@ export class UserContentViewComponent implements OnInit {
   }
 
   openModal(id: string, item: IOwner): void {
+    debugger;
     this.selectItem = item;
     this.modalService.open(id);
   }
 
   closeModal(id: string): void {
+      debugger;
       this.modalService.close(id);
   }
 }

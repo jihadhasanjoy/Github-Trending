@@ -21,11 +21,13 @@ export class ModalService {
   open(id: string): void {
       // open modal specified by id
       const modal = this.modals.find(x => x.id === id);
+      debugger;
       modal.open();
   }
 
   close(id: string): void {
       // close modal specified by id
+      debugger;
       const modal = this.modals.find(x => x.id === id);
       modal.close();
   }
